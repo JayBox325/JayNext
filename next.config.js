@@ -1,6 +1,10 @@
 const nextConfig = {
     reactStrictMode: true,
 
+    experimental: {
+        scrollRestoration: false,
+    },
+
     // Custom Webpack config
     webpack(config) {
         config.module.rules.push(
