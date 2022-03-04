@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Layout from '../_Layout';
+import Layout from '@/components/_Layout';
 
 export default function TransitionHandler(props) {
     const { children } = props || {};

@@ -1,16 +1,19 @@
 import '@/styles/globals.scss'
 import Layout from '@/components/_Layout'
-import Header from "@/components/_Layout/Header";
-import Footer from "@/components/_Layout/Footer";
 import TransitionHandler from '@/components/TransitionHandler'
+
+import { ApolloProvider } from "@apollo/client";
+import client from "@/utils/apollo/client";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <Layout>
-            <TransitionHandler>
-                <Component {...pageProps} />
-            </TransitionHandler>
-        </Layout>
+        <ApolloProvider client={client}>
+            <Layout>
+                <TransitionHandler>
+                    <Component {...pageProps} />
+                </TransitionHandler>
+            </Layout>
+        </ApolloProvider>
     )
 }
 

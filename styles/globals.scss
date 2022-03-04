@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .content {
-    @apply opacity-0 transition-opacity duration-1000;
+    @apply opacity-0 transition-opacity duration-500;
 }
 
 .fade-in {
