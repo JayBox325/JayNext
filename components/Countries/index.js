@@ -1,36 +1,21 @@
-import { useQuery, gql } from "@apollo/client";
+import CountriesClient from "./client-side";
+import CountriesServer from "./server-side";
+import CountriesStatic from "./static";
 
-const QUERY = gql`
-  query Countries {
-    countries {
-      code
-      name
-      emoji
+function countries(props) {
+    const dataType = props.dataType ?? 'client'
+    const countries = props.countries ?? null
+
+    switch (dataType) {
+        case 'client':
+            return <CountriesClient />
+
+        case 'server':
+            return <CountriesServer countries={countries} />
+
+        case 'static':
+            return <CountriesStatic countries={countries} />
     }
-  }
-`;
-
-export default function Countries() {
-    const { data, loading, error } = useQuery(QUERY);
-
-    if (loading) {
-        return <h2>Loading...</h2>;
-    }
-
-    if (error) {
-        console.error(error);
-        return null;
-    }
-
-    const countries = data.countries.slice(0,20);
-
-    return (
-        <div>
-            {countries.map((country) => (
-                <div key={country.code}>
-                    <h3>{country.emoji} - {country.name}</h3>
-                </div>
-            ))}
-        </div>
-    );
 }
+
+export default countries

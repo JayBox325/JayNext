@@ -3,11 +3,12 @@ import Layout from '@/components/_Layout'
 import TransitionHandler from '@/components/TransitionHandler'
 
 import { ApolloProvider } from "@apollo/client";
-import client from "@/utils/apollo/client";
+import clientMex from "@/utils/apollo/clientMex";
+import clientCountries from "@/utils/apollo/clientCountries";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <ApolloProvider client={client}>
+        <ApolloProvider client={clientCountries}>
             <Layout>
                 <TransitionHandler>
                     <Component {...pageProps} />
