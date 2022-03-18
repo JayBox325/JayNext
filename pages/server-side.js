@@ -1,12 +1,12 @@
 import clientCraft from "@/utils/apollo/clientCraft";
 import GET_PRODUCTS from "@/utils/apollo/queries/getProducts";
+import Products from "@/components/_Examples/Products";
 
 export default function ServerSide({ products }) {
-    console.log(products)
     return (
         <div className="w-full bg-red-200 h-screen flex items-center flex-col justify-center text-center">
             <h1 className="text-2xl font-bold mb-4">Server Side Rendering</h1>
-            {/* <Products dataType='server' countries={countries} /> */}
+                <Products products={products} />
         </div>
     )
 }

@@ -3,22 +3,13 @@ import ClientSideRender from "@/components/ClientSideRender";
 
 import GET_PRODUCTS from "@/utils/apollo/queries/getProducts";
 
-function Products() {
-    const { data, loading, error } = useQuery(GET_PRODUCTS);
+function Products(props) {
+    let products = props?.products?.entries ?? null
 
-    if (loading) {
-        return <h2 className="loading">Fetching products</h2>;
-    }
+    // If products are passed, then it's a Static or Serverside render block
+    if (products) {
 
-    if (error) {
-        console.error(error);
-        return null;
-    }
-
-    const products = data.entries
-
-    return (
-        <ClientSideRender>
+        return (
             <div>
                 {products.map((product) => (
                     <div key={product.slug}>
@@ -26,8 +17,35 @@ function Products() {
                     </div>
                 ))}
             </div>
-        </ClientSideRender>
-    );
+        );
+
+    // Otherwise, get them client-side
+    } else {
+        const { data, loading, error } = useQuery(GET_PRODUCTS);
+
+        if (loading) {
+            return <h2 className="loading">Fetching products</h2>;
+        }
+    
+        if (error) {
+            console.error(error);
+            return null;
+        }
+    
+        products = data.entries
+
+        return (
+            <ClientSideRender>
+                <div>
+                    {products.map((product) => (
+                        <div key={product.slug}>
+                            <h3>{product.title}</h3>
+                        </div>
+                    ))}
+                </div>
+            </ClientSideRender>
+        );
+    }
 }
 
 export default Products
