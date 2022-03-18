@@ -1,0 +1,11 @@
+.container {
+    @apply max-w-screen-2xl mx-auto px-6;
+
+    @screen md {
+        @apply px-8;
+    }
+
+    @screen xl {
+        @apply px-12;
+    }
+}

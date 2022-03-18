@@ -1,5 +1,8 @@
 @tailwind base;
 
+@import './structure/row.scss';
+@import './structure/container.scss';
+
 @import './elements/loading.scss';
 
 @import './transitions/fade-in.scss';
