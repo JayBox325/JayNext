@@ -10,7 +10,7 @@ export default function ServerSide({ products }) {
                     <div className="">
                         <h1 className="mb-4">Server-Side Rendering</h1>
                         <div className="w-content max-w-2xl mb-4">
-                            <p>Server-side rendering (SSR) is an application's ability to convert HTML files on the server into a fully rendered HTML page for the client. The web browser submits a request for information from the server, which instantly responds by sending a fully rendered page to the client.</p>
+                            <p>Server-side rendering (SSR) is an application&apos;s ability to convert HTML files on the server into a fully rendered HTML page for the client. The web browser submits a request for information from the server, which instantly responds by sending a fully rendered page to the client.</p>
                             <p>This means the user has to wait for the server to recieve the response, source the data and render the template. Which can be longer.</p>
                         </div>
                     </div>
