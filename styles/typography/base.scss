@@ -1,0 +1,72 @@
+body {
+    @apply leading-normal bg-white text-base text-black font-sans;
+
+    @screen md {
+        @apply text-lg;
+    }
+
+    @screen xl {
+        @apply text-xl leading-relaxed;
+    }
+}
+
+* {
+    text-underline-offset: 3px;
+}
+
+.w-content {
+
+    > * {
+        &:first-child {
+            @apply mt-0;
+        }
+    }
+
+    a {
+        @apply underline;
+        
+        &:hover {
+            text-decoration-thickness: 3px;
+        }
+    }
+
+    h1,
+    .title-1,
+    h2,
+    .title-2,
+    h3,
+    .title-3,
+    h4,
+    .title-4,
+    h5,
+    .title-5,
+    h6,
+    .title-6 {
+        @apply mt-8;
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: count;
+    }
+
+    ul,
+    ol {
+        padding-left: 3rem;
+    }
+
+    > * {
+        @apply mb-4;
+
+        &:first-child {
+            @apply mt-0;
+        }
+
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+}

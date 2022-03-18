@@ -7,7 +7,15 @@ function ProductsClientSide() {
     const { data, loading, error } = useQuery(GET_PRODUCTS);
 
     if (loading) {
-        return <h2 className="loading">Fetching products</h2>;
+        return (
+            <div className="grid grid-cols-6 w-full gap-6">
+                {Array.from({ length: 10 }, (_, i) => (
+                    <div className="col-span-6 sm:col-span-3 lg:col-span-2 bg-red-300 shadow-lg border border-black border-opacity-10 p-4 shimmer" key={i}>
+                        <h3 className="title-5">&nbsp;</h3>
+                    </div>
+                ))}
+            </div>
+        );
     }
 
     if (error) {
@@ -19,10 +27,10 @@ function ProductsClientSide() {
 
     return (
         <ClientSideRender>
-            <div>
+            <div className="grid grid-cols-6 w-full gap-6">
                 {products.map((product) => (
-                    <div key={product.slug}>
-                        <h3>{product.title}</h3>
+                    <div className="col-span-6 sm:col-span-3 lg:col-span-2 bg-red-300 shadow-lg border border-black border-opacity-10 p-4" key={product.slug}>
+                        <h3 className="title-5">{product.title}</h3>
                     </div>
                 ))}
             </div>

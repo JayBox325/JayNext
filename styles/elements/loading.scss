@@ -1,15 +1,12 @@
 .loading {
-    @apply relative;
+    @apply relative inline-block;
 
     &:after {
-        @apply absolute left-full;
-        overflow: hidden;
-        display: inline-block;
+        @apply absolute left-full overflow-hidden inline-block w-0;
         vertical-align: bottom;
         -webkit-animation: ellipsis steps(4, end) 900ms infinite;
         animation: ellipsis steps(4, end) 900ms infinite;
         content: "\2026"; /* ascii code for the ellipsis character */
-        width: 0px;
     }
 }
 

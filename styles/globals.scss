@@ -1,9 +1,13 @@
 @tailwind base;
 
+@import './typography/base.scss';
+@import './typography/headings.scss';
+
 @import './structure/row.scss';
 @import './structure/container.scss';
 
 @import './elements/loading.scss';
+@import './elements/shimmer.scss';
 
 @import './transitions/fade-in.scss';
 

@@ -1,0 +1,26 @@
+.shimmer {
+    @apply relative overflow-hidden;
+
+    &:after {
+        @apply absolute top-1/2 left-1/2 skew-y-12 blur-2xl bg-black bg-opacity-10;
+        content: "";
+        width: 150%;
+        height: 150%;
+
+        animation-duration: 1.2s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: loadingShimmer;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes loadingShimmer {
+    0% {
+        transform: translate3d(-150%, -50%, 0);
+    }
+
+    100% {
+        transform: translate3d(100%, -50%, 0);
+    }
+}
