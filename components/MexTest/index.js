@@ -1,19 +1,10 @@
-import { useQuery, gql } from "@apollo/client";
-import CountriesList from "@/components/CountiesList";
+import { useQuery } from "@apollo/client";
 import ClientSideRender from "@/components/ClientSideRender";
 
-const QUERY = gql`
-    query GetProducts {
-        entries(type: ["food", "drink"]) {
-            slug
-            title
-            typeHandle
-        }
-    }
-`;
+import GET_PRODUCTS from "@/utils/apollo/queries/getProducts";
 
-function MexTest(props) {
-    const { data, loading, error } = useQuery(QUERY);
+function MexTest() {
+    const { data, loading, error } = useQuery(GET_PRODUCTS);
 
     if (loading) {
         return <h2>Loading...</h2>;
@@ -24,16 +15,16 @@ function MexTest(props) {
         return null;
     }
 
-    console.log(data)
-
     const products = data.entries
+
+    console.log(products)
 
     return (
         <>
             <p>Client side mex Test.</p>
             <ClientSideRender>
-            <div>
-                {products.map((product) => (
+                <div>
+                    {products.map((product) => (
                         <div key={product.slug}>
                             <h3>{product.title}</h3>
                         </div>

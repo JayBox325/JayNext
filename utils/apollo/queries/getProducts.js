@@ -4,6 +4,7 @@ const GET_PRODUCTS = gql`
     query GetProducts {
         entries(type: ["food", "drink"]) {
             slug
+            title
             typeHandle
         }
     }
