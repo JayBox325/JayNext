@@ -1,5 +1,4 @@
 import Countries from "@/components/Countries";
-import MexTest from "@/components/MexTest";
 import clientCountries from "@/utils/apollo/clientCountries";
 import GET_COUNTRIES from "@/utils/apollo/queries/getCountries";
 
@@ -10,15 +9,11 @@ export default function Static({ countries }) {
                 <h1 className="text-2xl font-bold mb-4">Static Rendering</h1>
                 <Countries dataType='static' countries={countries}/>
             </div>
-
-            <div className="w-full bg-blue-200 h-screen flex items-center flex-col justify-center text-center">
-                <MexTest />
-            </div>
         </>
     )
 }
 
-// Fetching countries data
+// Fetching countries data - has to be done in the PAGE
 
 export async function getStaticProps() {
     const { data } = await clientCountries.query({

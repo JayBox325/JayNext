@@ -11,7 +11,7 @@ export default function ServerSide({ countries }) {
     )
 }
 
-// Fetching countries data
+// Fetching countries data - has to be done in the PAGE.
 
 export async function getServerSideProps() {
     const { data } = await clientCountries.query({

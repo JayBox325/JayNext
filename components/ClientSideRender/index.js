@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 
-export default function ClientSideRender({ children, ...delegated }) {
-    const [hasMounted, setHasMounted] = useState(false);
+function ClientSideRender({ children, ...delegated }) {
+  const [hasMounted, setHasMounted] = useState(false);
 
-    useEffect(() => {
-        setHasMounted(true);
-    }, []);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
-    if (!hasMounted) {
-        return null;
-    }
+  if (!hasMounted) {
+    return null;
+  }
 
-    return <div {...delegated}>{children}</div>;
+  return <div {...delegated}>{children}</div>;
 }
+
+export default ClientSideRender
