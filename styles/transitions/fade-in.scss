@@ -1,0 +1,7 @@
+.fade-in {
+    @apply opacity-0 transition-opacity duration-500;
+
+    &--visible {
+        @apply opacity-100;
+    }
+}

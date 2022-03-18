@@ -1,11 +1,7 @@
 @tailwind base;
-@tailwind components;
+
+@import './elements/loading.scss';
+
+@import './transitions/fade-in.scss';
+
 @tailwind utilities;
-
-.content {
-    @apply opacity-0 transition-opacity duration-500;
-}
-
-.fade-in {
-    opacity: 1;
-}
