@@ -8,7 +8,8 @@ import clientCountries from "@/utils/apollo/clientCountries";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <ApolloProvider client={clientCountries}>
+        // <ApolloProvider client={clientCountries}>
+        <ApolloProvider client={clientMex}>
             <Layout>
                 <TransitionHandler>
                     <Component {...pageProps} />
