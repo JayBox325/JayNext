@@ -2,6 +2,7 @@ import GET_PRODUCTS from "@/utils/apollo/queries/getProducts"
 import GET_PRODUCT from "@/utils/apollo/queries/getProduct"
 import clientCraft from "@/utils/apollo/clientCraft"
 import Hero from "@/components/_Examples/Hero"
+import CustomImage from '@/components/CustomImage'
 
 export default function Product(props) {
 
@@ -12,9 +13,11 @@ export default function Product(props) {
     const {
         title,
         allergens,
-        extract
+        extract,
+        price,
+        featuredImage,
+        relatedProducts,
     } = props.entry || {}
-
 
     return (
         <>
@@ -24,19 +27,27 @@ export default function Product(props) {
                 body={extract}
             />
 
-            <div className="row bg-yellow-300">
-                <div className="container">
-                    <div className="w-content">
-                        <h2>Allergens</h2>
-                        <p>This is food, so it has some allergens. And they are:</p>
-                        <ul>
-                            {allergens.map((allergen, i) => (
-                                <li key={i}>{allergen}</li>
-                            ))}
-                        </ul>
+            {featuredImage ? (
+                <div className="row p-0 h-[80vh] overflow-hidden">
+                    <CustomImage image={featuredImage} className="object-cover object-center w-full h-full"/>
+                </div>
+            ) : ''}
+
+            {allergens?.length ? (
+                <div className="row bg-yellow-300">
+                    <div className="container">
+                        <div className="w-content">
+                            <h2>Allergens</h2>
+                            <p>This is food, so it has some allergens. And they are:</p>
+                            <ul>
+                                {allergens.map((allergen, i) => (
+                                    <li key={i}>{allergen}</li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+            ) : ''}
         </>
     )
 

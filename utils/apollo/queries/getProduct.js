@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import { imageSchema } from '@/utils/apollo/fragments/imageSchema';
 
 export const GET_PRODUCT = gql`
     query GetProduct($slug: String) {
@@ -14,9 +15,8 @@ export const GET_PRODUCT = gql`
                     title
                     slug
                 }
-                availableAt {
-                    title
-                    slug
+                featuredImage {
+                    ${imageSchema}
                 }
             }
         }
