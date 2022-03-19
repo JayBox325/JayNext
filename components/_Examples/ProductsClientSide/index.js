@@ -12,7 +12,7 @@ function ProductsClientSide() {
         return (
             <div className="grid grid-cols-6 w-full gap-6">
                 {Array.from({ length: 10 }, (_, i) => (
-                    <ProductItem loading={true}/>
+                    <ProductItem key={i} loading={true}/>
                 ))}
             </div>
         );

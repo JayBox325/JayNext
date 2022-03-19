@@ -10,8 +10,8 @@ function ProductsList(props) {
     return (
         
         <div className="grid grid-cols-6 w-full gap-6">
-            {products.map((product) => (
-                <ProductItem product={product} />
+            {products.map((product, i) => (
+                <ProductItem key={i} product={product} />
             ))}
         </div>
     )
