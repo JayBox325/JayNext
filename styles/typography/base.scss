@@ -17,6 +17,8 @@ body {
 .w-content {
 
     > * {
+        @apply leading-normal;
+
         &:first-child {
             @apply mt-0;
         }

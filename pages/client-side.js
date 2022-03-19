@@ -1,19 +1,20 @@
-import ProductsClientSide from "@/components/_Examples/ProductsClientSide";
+import ProductsClientSide from "@/components/_Examples/ProductsClientSide"
+import Hero from "@/components/_Examples/Hero"
 
 export default function ClientSide() {
     return (
         <>
-            <div className="row bg-red-200">
-                <div className="container">
-                    <div className="">
-                        <h1 className="mb-4">Client-Side Rendering</h1>
-                        <div className="w-content max-w-2xl mb-4">
-                            <p>Client-side rendering (CSR) means rendering pages directly in the browser when the user arrives on it using JavaScript. All logic, data fetching, templating and routing are handled on the client rather than the server.</p>
-                            <p>This leads to faster page-load times, but the content loads after the fact. This will include &apos;Loading&apos; states while the content is fetched and rendered.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <Hero
+                className="bg-red-200"
+                title='Client-Side Rendering'
+                body={
+                    <>
+                        <p>Client-side rendering (CSR) means rendering pages directly in the browser when the user arrives on it using JavaScript. All logic, data fetching, templating and routing are handled on the client rather than the server.</p>
+                        <p>This leads to faster page-load times, but the content loads after the fact. This will include &aposLoading&apos states while the content is fetched and rendered.</p>
+                    </>
+                }
+            />
 
             <div className="row bg-red-300">
                 <div className="container">
@@ -23,5 +24,5 @@ export default function ClientSide() {
             </div>
             
         </>
-    );
+    )
 }

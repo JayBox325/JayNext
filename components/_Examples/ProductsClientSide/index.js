@@ -1,12 +1,12 @@
-import { useQuery } from "@apollo/client";
-import ClientSideRender from "@/components/ClientSideRender";
-import ProductsList from "@/components/_Examples/ProductsList";
+import { useQuery } from "@apollo/client"
+import ClientSideRender from "@/components/ClientSideRender"
+import ProductsList from "@/components/_Examples/ProductsList"
 import ProductItem from '@/components/_Examples/ProductItem'
 
-import GET_PRODUCTS from "@/utils/apollo/queries/getProducts";
+import GET_PRODUCTS from "@/utils/apollo/queries/getProducts"
 
 function ProductsClientSide() {
-    const { data, loading, error } = useQuery(GET_PRODUCTS);
+    const { data, loading, error } = useQuery(GET_PRODUCTS)
 
     if (loading) {
         return (
@@ -15,12 +15,12 @@ function ProductsClientSide() {
                     <ProductItem key={i} loading={true}/>
                 ))}
             </div>
-        );
+        )
     }
 
     if (error) {
-        console.error(error);
-        return null;
+        console.error(error)
+        return null
     }
 
     const products = data.entries

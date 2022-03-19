@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 const GET_PRODUCTS = gql`
     query GetProducts {
@@ -8,6 +8,6 @@ const GET_PRODUCTS = gql`
             typeHandle
         }
     }
-`;
+`
 
-export default GET_PRODUCTS;
+export default GET_PRODUCTS
