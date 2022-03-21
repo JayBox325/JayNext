@@ -20,7 +20,7 @@ export default function Home() {
                         <div className="flex justify-center border border-gray-600 rounded-xl p-6 h-full flex-col items-center text-center lg:py-8 xl:px-8">
                             <h2 className="title-6">NextJS Web App</h2>
                             <div className="text-base mt-2">
-                                <p>This is what you're viewing now. It's a separate NextJS frontend that hooks into your CraftCMS site and pulls the data across.</p>
+                                <p>This is what you&apos;re viewing now. It&apos;s a separate NextJS frontend that hooks into your CraftCMS site and pulls the data across.</p>
                             </div>
                         </div>
                     </div>

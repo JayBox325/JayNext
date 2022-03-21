@@ -25,6 +25,7 @@ function CustomImage(props) {
                                 style={{ background: imageTransform.colorPalette[0] }}
                                 src={imageTransform.src}
                                 loading="lazy"
+                                alt=""
                             />
                         </picture>
                     </Fragment>
