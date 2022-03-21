@@ -1,6 +1,12 @@
 const nextConfig = {
     reactStrictMode: true,
 
+    images: {
+        domains: [
+            'mex.imgix.net'
+        ],
+    },
+
     // Custom Webpack config
     webpack(config) {
         config.module.rules.push(

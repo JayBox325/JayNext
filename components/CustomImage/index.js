@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Fragment } from 'react'
 
 function CustomImage(props) {
     const {
@@ -6,26 +7,29 @@ function CustomImage(props) {
         className
     } = props || {}
 
-    console.log('image', image)
-
     return (
         <>
-            {image.map(
-                ({
-                    imageTransform: {
-                        srcsetWebp: path
-                    },
-                }) => (
-                    <Image
-                        key={path}
-                        src={path}
-                        className={className}
-                        alt=''
-                        width=''
-                        height=''
-                    />
+            {image.map((image, i) => {
+                const {
+                    imageTransform
+                } = image || {}
+
+                return (
+                    <Fragment key={i}>
+                        {console.log('image', image)}
+                        <picture className={className}>
+                            <source srcSet={imageTransform.srcsetWebp} type="image/webp" />
+                            <source srcSet={imageTransform.srcsetWebp} type="image/jpeg" />
+                            <img
+                                className={className}
+                                style={{ background: imageTransform.colorPalette[0] }}
+                                src={imageTransform.src}
+                                loading="lazy"
+                            />
+                        </picture>
+                    </Fragment>
                 )
-            )}
+            })}
         </>
     )
 }
